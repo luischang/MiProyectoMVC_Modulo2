@@ -1,0 +1,42 @@
+﻿@using MiProyectoMVC_Modulo2.Models
+@using MiProyectoMVC_Modulo2.ViewModels
+@model  MiProyectoMVC_Modulo2.ViewModels.ClienteProductoViewModel
+@{
+    ViewBag.Title = "Index";
+
+    //List<Cliente> listado = Model;
+    ClienteProductoViewModel cpvm = new ClienteProductoViewModel();
+    cpvm = Model;
+}
+
+<h2>
+    Aplicaciones Web con MVC
+</h2>
+
+<br />
+
+<h3>Lista de Clientes</h3>
+<ul>
+    @foreach (var item in cpvm.Clientes)
+    {
+        <li>
+            @(item.ClienteId + "-" +
+              item.ClienteNombre + "-" +
+              item.ClienteTelefono)
+        </li>
+    }
+</ul>
+
+<h3>Lista de Productos</h3>
+<ul>
+    @foreach (var item in cpvm.Productos)
+    {
+        <li>
+            @(item.ProductoId + "-" +
+              item.ProductoDescripcion + "-" +
+              item.ProductoPrecio)
+        </li>
+    }
+</ul>
+
+
